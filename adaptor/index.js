@@ -19,14 +19,14 @@ const customParams = {
 }
 
 const createRequest = (input, callback) => {
-  const validator = new Validator(callback, input, customParams)
-  const jobRunID = validator.validated.id
+  const validator = new Validator(input, customParams)
 
+  const jobRunID = validator.validated.id
   const chainId = validator.validated.data.chainId;
   const profileId = validator.validated.data.profileId;
   const essenseId = validator.validated.data.essenseId;
-  const url = `https://cyber-tracker.dataverse.art/api/v1/${chainId}/collect-info/${profileId}/${essenseId}`;
 
+  const url = `https://cyber-tracker.dataverse.art/api/v1/${chainId}/collect-info/${profileId}/${essenseId}`;
   const config = {
     url
   }
